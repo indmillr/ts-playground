@@ -17,3 +17,8 @@ var user2 = {
     }
 };
 console.log(user.name);
+var username = "alex";
+var pagename = "1"; // allows 'pagename' to be a str OR a num
+var errorMessage = null; // 'errorMessage' can be str OR null, and assigned null by default
+var user3; // custom Interface
+var someProp; // examples

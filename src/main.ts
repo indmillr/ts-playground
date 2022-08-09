@@ -34,3 +34,16 @@ const user2: UserInterface = {
 };
 
 console.log(user.name);
+
+// ----- Union Operator ----- //
+interface UserInterface2 {
+  name: string;
+  surname: string;
+}
+
+let username: string = "alex";
+let pagename: string | number = "1"; // allows 'pagename' to be a str OR a num
+let errorMessage: string | null = null; // 'errorMessage' can be str OR null, and assigned null by default
+let user3: UserInterface2 | null; // custom Interface
+
+let someProp: string | number | null | undefined | string[] | object; // examples
