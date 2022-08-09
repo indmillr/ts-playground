@@ -35,11 +35,18 @@ const user2: UserInterface = {
 
 console.log(user.name);
 
+// ----- Type Aliases ----- //
+type ID = string;
+type PopularTag = string;
+
 // ----- Union Operator ----- //
 interface UserInterface2 {
+  id: ID;
   name: string;
   surname: string;
 }
+
+const popularTags = ["dragon", "coffee"];
 
 let username: string = "alex";
 let pagename: string | number = "1"; // allows 'pagename' to be a str OR a num
