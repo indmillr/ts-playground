@@ -38,6 +38,7 @@ console.log(user.name);
 // ----- Type Aliases ----- //
 type ID = string;
 type PopularTag = string;
+type MaybePopularTag = PopularTag | null; // type alias + union operator
 
 // ----- Union Operator ----- //
 interface UserInterface2 {
@@ -46,7 +47,8 @@ interface UserInterface2 {
   surname: string;
 }
 
-const popularTags = ["dragon", "coffee"];
+const popularTags: PopularTag[] = ["dragon", "coffee"];
+const dragonsTag: MaybePopularTag = "dragon";
 
 let username: string = "alex";
 let pagename: string | number = "1"; // allows 'pagename' to be a str OR a num
