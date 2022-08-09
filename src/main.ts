@@ -1,2 +1,1 @@
-const a = "1";
-console.log("aaa", a);
+let hello: string = "world";
