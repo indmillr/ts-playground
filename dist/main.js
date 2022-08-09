@@ -1,26 +1,7 @@
-// Function syntax
-var getFullName = function (name, surname) {
-    return (name = " " + surname);
+// ----- VOID Type ----- //
+var doSomething = function () {
+    console.log("doSomething");
 };
-console.log(getFullName("Ian", "Miller"));
-var user = {
-    name: "Ian",
-    age: 37,
-    getMessage: function () {
-        return "Hello" + name;
-    }
-};
-var user2 = {
-    name: "Jack",
-    getMessage: function () {
-        return "Hello" + name;
-    }
-};
-console.log(user.name);
-var popularTags = ["dragon", "coffee"];
-var dragonsTag = "dragon";
-var username = "alex";
-var pagename = "1"; // allows 'pagename' to be a str OR a num
-var errorMessage = null; // 'errorMessage' can be str OR null, and assigned null by default
-var user3; // custom Interface
-var someProp; // examples
+var foo = "foo"; // 'any' turns off TS check -- try to avoid ANY
+// ANY is not a solution, but a cause to bigger future problems
+console.log(foo.bar());
