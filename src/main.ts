@@ -10,18 +10,27 @@ console.log(getFullName("Ian", "Miller"));
 
 // this is a reusable interface for all 'users'
 // by default, all props are mandatory
-interface User {
+
+interface UserInterface {
+  // using postfix 'Interface' convention separates Interface and Class ids
   name: string;
   age?: number; // the '?' makes the 'age' prop optional
+  getMessage(): string;
 }
 
-const user: User = {
+const user: UserInterface = {
   name: "Ian",
   age: 37,
+  getMessage() {
+    return "Hello" + name;
+  },
 };
 
-const user2: User = {
+const user2: UserInterface = {
   name: "Jack",
+  getMessage() {
+    return "Hello" + name;
+  },
 };
 
 console.log(user.name);
