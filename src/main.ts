@@ -1,39 +1,15 @@
-interface UserInterface {
-  getFullname(): string;
-}
+// All generic Data Types are written inside '<>'
+const addId = <T>(obj: T) => {
+  const id = Math.random().toString(16);
+  return {
+    ...obj,
+    id,
+  };
+};
 
-class User implements UserInterface {
-  // by default, variables are PUBLIC
-  firstName: string;
-  private lastName: string;
-  readonly unchangableName: string; // readonly is great for setting constants
-  static readonly maxAge = 50; // static prop is on the Class itself
+const user = {
+  name: "Jack",
+};
 
-  constructor(firstName: string, lastName: string) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.unchangableName = firstName;
-  }
-
-  getFullname(): string {
-    return this.firstName + " " + this.lastName;
-  }
-}
-
-class Admin extends User {
-  private editor: string;
-  setEditor(editor: string): void {
-    this.editor = editor;
-  }
-
-  getEditor(): string {
-    return this.editor;
-  }
-}
-
-const user = new User("Ian", "Miller");
-console.log(user.firstName);
-console.log(User.maxAge);
-
-const admin = new Admin("Foo", "Bar");
-console.log(admin.firstName);
+const result = addId(user);
+console.log("result", result);
