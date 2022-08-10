@@ -1,34 +1,17 @@
-// All generic Data Types are written inside '<>'
-const addId = <T extends object>(obj: T) => {
-  // T by default should be an object
-  const id = Math.random().toString(16);
-  return {
-    ...obj,
-    id,
-  };
-};
-
-interface UserInterface<T, V> {
-  name: string;
-  data: T;
-  meta: V;
+// enum values are incremented from 1
+enum StatusEnum {
+  NotStarted = "notStarted",
+  InProgress = "inProgress",
+  Done = "done",
 }
 
-// Must provide generic type
-const user: UserInterface<{ meta: string }, string> = {
-  name: "Jack",
-  data: {
-    meta: "foo",
-  },
-  meta: "bar",
-};
+interface Task {
+  id: string;
+  status: StatusEnum;
+}
 
-const user2: UserInterface<string[], string> = {
-  name: "John",
-  data: ["foo", "bar", "baz"],
-  meta: "foo",
-};
+let notStartedStatus: StatusEnum = StatusEnum.NotStarted;
 
-// Explicit declarations are easier to read
-const result = addId<UserInterface>(user);
-console.log("result", result);
+notStartedStatus = StatusEnum.Done;
+
+console.log(StatusEnum.InProgress);
